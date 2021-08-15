@@ -50,7 +50,7 @@ main <- function(){
     print("Command line arg for path of user libraries needs to be supplied")
     exit()
   }
-  else if (dir.exists(args[6])){
+  else if (!(dir.exists(args[6]))){
     print("path for install location for R libraries does not exist")
     print("please make the directory first with: mkdir <library_path>")
     print(args[6])
