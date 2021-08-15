@@ -66,7 +66,7 @@ det_sims <-
          f, x0, Tmax,
          .id = "method")
 
-write_csv(det_sims, "/Users/charliepercy/det_sims.csv")
+write_csv(det_sims, "/home/n9427759/det_sims.csv")
 
 
 det_sims %>%
