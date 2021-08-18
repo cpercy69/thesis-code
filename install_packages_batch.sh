@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-#PBS -N install_packages
-#PBS -l ncpus=1
-#PBS -l mem=2GB
-#PBS -l walltime=20:00:00
+#PBS -N Fish_code
+#PBS -l ncpus=9
+#PBS -l mem=32GB
+#PBS -l walltime=00:30:00
 #PBS -o install_packages_stdout.out
 #PBS -e install_packages_stderr.out
 
