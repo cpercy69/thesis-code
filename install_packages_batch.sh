@@ -87,7 +87,7 @@ run_program(){
     cd $PBS_O_WORKDIR/install_r_packages
     # make sure the library directory exists
     mkdir ~/R/library_3.6.2
-    Rscript ./install_r_packages.R
+    Rscript install_r_packages.R
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.
     #This just means we need to let R now where we installed
