@@ -113,7 +113,7 @@ run_clean(){
 ###############################################
 
 print_pbs_info
-load_modules
+#load_modules
 copy_in
 copy_out
 run_program
