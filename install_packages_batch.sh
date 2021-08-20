@@ -86,8 +86,8 @@ run_program(){
     #where this bash job script is
     cd $PBS_O_WORKDIR
     # make sure the library directory exists
-    mkdir -p ~/R/library_3.6.2
-    Rscript ./install_r_packages.R ~/R/library_3.6.2
+    #mkdir -p ~/R/library_3.6.2
+    Rscript ./install_sarsop.R ~/R/library_3.6.2
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.
     #This just means we need to let R now where we installed
