@@ -84,7 +84,7 @@ copy_out(){
 run_program(){
     #make sure we change to the current directory
     #where this bash job script is
-    cd $PBS_O_WORKDIR/thesis-code
+    cd $PBS_O_WORKDIR
     # make sure the library directory exists
     mkdir -p ~/R/library_3.6.2
     Rscript ./install_r_packages.R
