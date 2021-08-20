@@ -87,13 +87,13 @@ run_program(){
     cd $PBS_O_WORKDIR
     # make sure the library directory exists
     mkdir -p ~/R/library_3.6.2
-    Rscript ./install_r_packages.R
+    Rscript ./install_r_packages.R ~/R/library_3.6.2
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.
     #This just means we need to let R now where we installed
     #the new packages. This next command will save the variable
     #in an R envirionment file to tell us where it is stored
-    echo 'R_LIBS_USER="~/R/library"' >  ~/.Renviron
+    echo 'R_LIBS_USER="~/R/library_3.6.2"' >  ~/.Renviron
 }
 
 
