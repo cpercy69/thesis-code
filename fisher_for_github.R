@@ -1,5 +1,5 @@
 rm(list = ls())
-devtools::install_github("boettiger-lab/sarsop@0.5.0")
+#devtools::install_github("boettiger-lab/sarsop@0.5.0")
 library(sarsop)
 library(tidyverse)
 library(parallel)
@@ -10,7 +10,7 @@ tic()
 options(mc.cores=parallel::detectCores())
 
 # DOESN'T LIKE LONG DIRECTORY
-log_dir <- "/home/n9427759"
+log_dir <- "/home/n9427759/thesis-code"
 
 ### DEFINITIONS: POPULATION MODEL AND UTILITY FUNCTION ###
 
@@ -66,7 +66,7 @@ det_sims <-
          f, x0, Tmax,
          .id = "method")
 
-write_csv(det_sims, "/home/n9427759/det_sims.csv")
+write_csv(det_sims, "/home/n9427759/thesis-code/det_sims.csv")
 
 
 det_sims %>%
