@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #PBS -N fisher
-#PBS -l ncpus=9
-#PBS -l mem=32GB
+#PBS -l ncpus=12
+#PBS -l mem=128GB
 #PBS -l walltime=00:30:00
 #PBS -o fisher_stdout.out
 #PBS -e fisher_stderr.out
