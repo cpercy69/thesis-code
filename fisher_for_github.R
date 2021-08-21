@@ -1,6 +1,6 @@
 rm(list = ls())
-.libPaths("~/R/library_3.6.2")
-.libPaths()  # confirm set correctly
+#.libPaths("~/R/library_3.6.2")
+#.libPaths()  # confirm set correctly
 #devtools::install_github("boettiger-lab/sarsop@0.5.0")
 library(sarsop)
 library(tidyverse)
