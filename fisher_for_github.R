@@ -16,7 +16,7 @@ log_dir <- "/home/n9427759/thesis-code"
 
 ### DEFINITIONS: POPULATION MODEL AND UTILITY FUNCTION ###
 
-r <- 0.75
+r <- 0.6
 K <- 1
 
 f <- function(x, h){
@@ -97,7 +97,7 @@ policies <- data.frame(
 ### DEFINE THE POMDP MATRICES ###
 
 meta <- expand.grid(sigma_g = c(0.02, 0.1, 0.15),
-                    sigma_m = c(0, 0.1, 0.25),
+                    sigma_m = c(0, 0.1, 0.15),
                     stringsAsFactors = FALSE) %>%
         mutate(scenario = as.character(1:length(sigma_m)))
 
