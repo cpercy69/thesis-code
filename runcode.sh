@@ -51,7 +51,7 @@ load_modules(){
     source /etc/profile.d/modules.sh 
 
     #load R
-    module load atg/R/3.6.2-foss-2019b
+    module load r/3.6.2-foss-2019b
 }    
 
 
