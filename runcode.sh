@@ -78,6 +78,7 @@ run_program(){
     #where this bash job script is
     cd $PBS_O_WORKDIR
     #now run the R script
+    echo 'R_LIBS_USER="~/R/library_3.6.2"' >  ~/.Renviron
     Rscript fisher_for_github.R    
 }
 
