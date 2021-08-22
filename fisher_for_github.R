@@ -7,6 +7,7 @@ library(tidyverse)
 library(parallel)
 library(gridExtra)
 library(tictoc)
+library(optparse)
 
 tic()
 options(mc.cores=parallel::detectCores())
@@ -14,9 +15,28 @@ options(mc.cores=parallel::detectCores())
 # DOESN'T LIKE LONG DIRECTORY
 log_dir <- "/home/n9427759/thesis-code"
 
-### DEFINITIONS: POPULATION MODEL AND UTILITY FUNCTION ###
+parseArgs <- function(){
+  # Parses in command line arguments
+  #
+  # Args:
+  #   NA
+  #
+  # Returns:
+  #   Dataframe with the columns ntrees filled with
+  #   value supplied by the command line
+  #Load in the arguments from the command line
+  option_list = list(
+    make_option(c("-g", "--growthrate"), type="integer", default=0.75,
+                help="intrinsic growth rate"));
+  opt_parser = OptionParser(option_list=option_list);
+  args = parse_args(opt_parser);
+  return(args)
+}
 
-r <- 0.6
+args <- parseArgs()
+
+### DEFINITIONS: POPULATION MODEL AND UTILITY FUNCTION ###
+r <- args$growthrate
 K <- 1
 
 f <- function(x, h){
@@ -82,7 +102,7 @@ det_sims %>%
 ### SOLVING THE POMDP SOLUTION ###
 
 ## Discretize space
-states <- seq(0,2, length=100)
+states <- seq(0,2, length=50)
 actions <- states
 observations <- states
 
@@ -101,7 +121,7 @@ meta <- expand.grid(sigma_g = c(0.02, 0.1, 0.15),
                     stringsAsFactors = FALSE) %>%
         mutate(scenario = as.character(1:length(sigma_m)))
 
-meta <- meta[7,]
+meta <- meta[9,]
 write_csv(meta, file.path(log_dir, "meta.csv"))
 
 models <- parallel::mclapply(1:dim(meta)[1],
