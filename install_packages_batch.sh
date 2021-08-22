@@ -87,7 +87,7 @@ run_program(){
     cd $PBS_O_WORKDIR
     # make sure the library directory exists
     #mkdir -p ~/R/library_3.6.2
-    Rscript testargs.R --growthrate
+    Rscript testargs.R --growthrate 0.75
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.
     #This just means we need to let R now where we installed
