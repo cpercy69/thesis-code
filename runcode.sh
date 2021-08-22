@@ -3,7 +3,7 @@
 #PBS -N fisher
 #PBS -l ncpus=4
 #PBS -l mem=64GB
-#PBS -l walltime=03:00:00
+#PBS -l walltime=04:00:00
 #PBS -o fisher_stdout.out
 #PBS -e fisher_stderr.out
 
