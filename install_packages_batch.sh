@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #PBS -N Fish_code
-#PBS -l ncpus=9
-#PBS -l mem=32GB
+#PBS -l ncpus=1
+#PBS -l mem=4GB
 #PBS -l walltime=00:30:00
 #PBS -o install_packages_stdout.out
 #PBS -e install_packages_stderr.out
@@ -87,7 +87,7 @@ run_program(){
     cd $PBS_O_WORKDIR
     # make sure the library directory exists
     #mkdir -p ~/R/library_3.6.2
-    Rscript ./fisher_for_github.R ~/thesis-code
+    Rscript ./install_sarsop.R ~/R/library_3.6.2
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.
     #This just means we need to let R now where we installed
@@ -113,7 +113,7 @@ run_clean(){
 ###############################################
 
 print_pbs_info
-#load_modules
+load_modules
 copy_in
 copy_out
 run_program
