@@ -26,8 +26,8 @@ parseArgs <- function(){
   #   value supplied by the command line
   #Load in the arguments from the command line
   option_list = list(
-    make_option(c("-g", "--growthrate"), type="double", default=0.75,
-                help="intrinsic growth rate"));
+    make_option(c("-c", "--capacity"), type="double", default=1,
+                help="carrying capacity"));
   opt_parser = OptionParser(option_list=option_list);
   args = parse_args(opt_parser);
   return(args)
@@ -36,8 +36,8 @@ parseArgs <- function(){
 args <- parseArgs()
 
 ### DEFINITIONS: POPULATION MODEL AND UTILITY FUNCTION ###
-r <- args$growthrate
-K <- 1
+r <- 0.75
+K <- args$capacity
 
 f <- function(x, h){
   s <- pmax(x - h, 0) # compares x-h to 0 and outputs which ever is higher
