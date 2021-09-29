@@ -26,8 +26,8 @@ parseArgs <- function(){
   #   value supplied by the command line
   #Load in the arguments from the command line
   option_list = list(
-    make_option(c("-c", "--capacity"), type="double", default=1,
-                help="carrying capacity"));
+    make_option(c("-r", "--reward"), type="double", default=1,
+                help="reward fcn"));
   opt_parser = OptionParser(option_list=option_list);
   args = parse_args(opt_parser);
   return(args)
@@ -37,7 +37,7 @@ args <- parseArgs()
 
 ### DEFINITIONS: POPULATION MODEL AND UTILITY FUNCTION ###
 r <- 0.75
-K <- args$capacity
+K <- 1
 
 f <- function(x, h){
   s <- pmax(x - h, 0) # compares x-h to 0 and outputs which ever is higher
@@ -45,7 +45,7 @@ f <- function(x, h){
 }
 
 reward_fn <- function(x, h) pmin(x, h)
-discount <- 0.95
+discount <- args$reward
 
 
 ### CALCULATING MSY, TAC, AND CE ###
