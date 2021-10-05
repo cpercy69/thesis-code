@@ -102,7 +102,7 @@ det_sims %>%
 ### SOLVING THE POMDP SOLUTION ###
 
 ## Discretize space
-states <- seq(0,2, length=20)
+states <- seq(0,2, length=70)
 actions <- states
 observations <- states
 
