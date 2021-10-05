@@ -26,8 +26,8 @@ parseArgs <- function(){
   #   value supplied by the command line
   #Load in the arguments from the command line
   option_list = list(
-    make_option(c("-r", "--reward"), type="double", default=1,
-                help="reward fcn"));
+    make_option(c("-d", "--discount"), type="double", default=1,
+                help="discount factor"));
   opt_parser = OptionParser(option_list=option_list);
   args = parse_args(opt_parser);
   return(args)
@@ -45,7 +45,7 @@ f <- function(x, h){
 }
 
 reward_fn <- function(x, h) pmin(x, h)
-discount <- args$reward
+discount <- args$discount
 
 
 ### CALCULATING MSY, TAC, AND CE ###
@@ -102,7 +102,7 @@ det_sims %>%
 ### SOLVING THE POMDP SOLUTION ###
 
 ## Discretize space
-states <- seq(0,2, length=70)
+states <- seq(0,2, length=20)
 actions <- states
 observations <- states
 
