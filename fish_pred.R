@@ -45,7 +45,7 @@ f <- function(x, h){
 }
 
 reward_fn <- function(x, h) pmin(x, h)
-discount <- args$discount
+discount <- 0.95
 
 
 ### CALCULATING MSY, TAC, AND CE ###
