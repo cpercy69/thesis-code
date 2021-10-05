@@ -79,7 +79,7 @@ run_program(){
     cd $PBS_O_WORKDIR
     #now run the R script
     #echo 'R_LIBS_USER="~/R/library_3.6.2"' >  ~/.Renviron
-    Rscript fisher_for_github.R --reward 1   
+    Rscript fisher_for_github.R --discount 1   
 }
 
 
