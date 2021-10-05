@@ -121,7 +121,7 @@ meta <- expand.grid(sigma_g = c(0.02, 0.1, 0.15),
                     stringsAsFactors = FALSE) %>%
         mutate(scenario = as.character(1:length(sigma_m)))
 
-meta <- meta[9,]
+meta <- meta[3,]
 write_csv(meta, file.path(log_dir, "meta.csv"))
 
 models <- parallel::mclapply(1:dim(meta)[1],
